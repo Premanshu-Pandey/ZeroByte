@@ -1,0 +1,29 @@
+{
+  "name": "techsprint",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Premanshu-Pandey/ZeroByte#readme",
+  "bugs": {
+    "url": "https://github.com/Premanshu-Pandey/ZeroByte/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Premanshu-Pandey/ZeroByte.git"
+  },
+  "license": "ISC",
+  "author": "Premanshu Pandey",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "mongoose": "^9.0.2",
+    "multer": "^2.0.2",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}
