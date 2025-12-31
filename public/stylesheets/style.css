@@ -43,6 +43,7 @@ body {
     border-radius: 10px;
     display:flex;
     justify-content: space-between;
+    min-height: 41px;
     
 
 }
@@ -197,7 +198,8 @@ main {
 }
 
 .user-name{
-    font-size: 25px;
+    /* font-size: 25px; */
+    font-size: 1.2vw;
     font-weight: 700;
     color: var(--theme-color);
 }
@@ -209,10 +211,12 @@ main {
 }
 
 .user-role{
+    margin-top: 5px;
     display: inline-block;
     padding: 2px 10px;
     border-radius: 10px;
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: 0.5vw;
     background: var(--theme-color);
     color: #000;
     width: fit-content;
@@ -388,4 +392,193 @@ main {
     list-style: none;
     padding: 15px;
     border-radius: 5px;
+}
+
+
+.logout-2 {
+    /* display: none; */
+    display: inline-block;
+        border: 1px solid var(--theme-color);
+        padding: 2px 5px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 1vw;
+        color: var(--theme-color);
+        transition: all 0.3s ease-in-out;
+}
+
+.logout-2 div {
+        border: none;
+    }
+
+.tab-nav {
+    display: none;
+}
+
+.list-item{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width:800px) and (max-width:1023px) {
+    .user-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 5vh;
+        min-height: 41px;
+    }
+
+    .user-role {
+        right: 0;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .logout-2 {
+        display: inline-block;
+        border: 1px solid var(--theme-color);
+        padding: 2px 5px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 1vw;
+        color: var(--theme-color);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .logout-2 div {
+        border: none;
+    }
+
+    .desk {
+        font-size: 1.3vw;
+        white-space: nowrap;
+        gap: 10px;
+    }
+
+    .detail {
+        padding: 3px 3px;
+    }
+
+    .name {
+        margin-right: 10px;
+    }
+
+    
+    .select {
+        position: absolute;
+        top: 5vh;
+        display: none;
+    }
+
+    body {
+        background-color: var(--back6);
+        width: 100vw;
+    }
+
+    .tab-nav {
+        display: flex;
+        position: absolute;
+        /* top: calc(5vh + 5px); */
+        top: 46px;
+        /* background-color: red; */
+        /* left: 50%; */
+        width: 95vw;
+        /* transform: translateX(-50%); */
+        text-align: center;
+        margin: 0 10px;
+        justify-content: space-around;
+    }
+
+    .tab-utility-btn{
+        width: 100%;
+        border-bottom: 2px solid var(--theme-color);
+    }
+
+    .func-name {
+        display: none;
+
+    }
+
+    .function-card {
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 4fr 4fr;
+        position: absolute;
+        bottom: 0;
+        /* display: none; */
+    }
+    .content-area{
+        transform: scale(0.9);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        /* background-color: transparent; */
+        /* background-color: yellow; */
+        padding: 0;
+        /* display:none; */
+    }
+    
+    .bookmark{
+        /* display: block; */
+        position: absolute;
+        bottom: 0;
+        z-index: 1000;
+        /* left: 0; */
+        /* margin: 100px; */
+        display: flex;
+        flex-direction: column;
+        padding-top:10px;
+        /* display: none; */
+    }
+
+    .bookmark-tab{
+        display: none;
+    }
+
+    /* *{
+        overflow: auto !important;
+    }
+     */
+    .list-item {
+        /* width: 90vw; */
+        /* display: none; */
+        /* background-color: white; */
+        height: 80vh;
+        /* overflow: hidden; */
+        /* position:absolute; */
+        position: fixed;
+        /* left: 0; */
+        left: 50%;
+        transform: translateX(-50%);
+        /* bottom: 10vh; */
+        top: 85px;
+        width: 90%;
+        /* color: black; */
+        padding: 10px 30px;
+    }
+    .list-item ul {
+        background-color: transparent;
+        overflow: auto;
+    }
+    .list-item ul li{
+        /* width: 80% !important; */
+        /* height: 50px; */
+        position: relative;
+        /* color: #000; */
+        z-index: 10000000000000;
+        /* overflow: auto; */
+        box-sizing: border-box;
+    }
 }

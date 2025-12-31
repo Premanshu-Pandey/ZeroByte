@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheets/homestyle.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,63 +14,144 @@
 </head>
 
 <body>
-    <nav>
-        <!-- <div class="name-logo"><img src="/images/name-logo.png" alt=""></div> -->
-        <div class="name">ZERO-BYTE</div>
+    <div class="navbar">
+        <div class="name">
+            <!-- <div class="logo">
+                <img src="./image/logo.png" alt="">
+            </div> -->
+            <div class="name-logo">
+                <img src="./images/name-logo.png" alt="">
+            </div>
+        </div>
 
-        <ul>
-            <a href="/auth/google" class="signup nav-btn">
-                <li>Sign up</li>
+        <div class="detail">
+
+            <div id="branch" class="route-btn nav-btn branch-btn">Branch</div>
+
+            <div class="arrow" id="one" style="color: grey;">></div>
+
+            <div id="semester" class="nav-btn semester-btn" style="color: gray;">Semester</div>
+
+            <div class="arrow" id="two" style="color: gray;">></div>
+
+            <div id="subject" class="nav-btn subject-btn" style="color: grey;">Subject</div>
+
+
+        </div>
+
+
+        <div class="table">
+            <a href="/auth/logout" class="logout-2">
+                <div class="logout-2">logout</div>
             </a>
-            <a href="/auth/google" class="login nav-btn">
-                <li>Login</li>
-            </a>
-            <!-- <a href="/home" class="admin nav-btn"><li>Admin</li></a> -->
-        </ul>
-    </nav>
+            <div class="desk" style="color: black;">My Desk</div>
+        </div>
+    </div>
+
 
     <main>
-        <img class="about" src="/images/logo.png" alt="logo.png">
-        <div class="about-text">
-
-            <div class="tag-line">
-                <p>"LEARN WHAT MATTERS,</p>
-                <p> WHENT IT MATTERS"</p>
-            </div>
-        </div>
-
-        <div class="hero">
-            <div class="hero-inside">
-                <a href="/auth/google" class="get-started">
-                    <div class="started">Get Started </div>
-                    <div class="arr">&#x2192;</div>
-                </a>
-
-                <div class="cards">
-                    <div class="track">
-                        <% for(let i=0;i < 6;i++){ %>
-                            <div class="card">
-                                <div class="glass">
-                                    <div class="tool-name">Function</div>
-                                    <p class="discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem,
-                                        totam?Lorem ipsum dolor
-                                        sit amet consectetur adipisicing elit. Maiores voluptatum doloremque id deserunt
-                                        obcaecati, cum adipisci
-                                        molestias quaerat? Qui a magni repellat enim exercitationem! Illo provident
-                                        natus praesentium quidem
-                                        aliquam nihil culpa eligendi, quas harum nemo deleniti quam odit delectus saepe
-                                        explicabo magnam
-                                        molestiae. Magni!   
-                                    </p>
-                                    <div class="icon"></div>
-                                </div>
-                            </div>
-                            <% } %>
-                    </div>
+        <div class="sidebar">
+            <div class="user-info">
+                <div class="logo"><img src="/images/logo.png" alt="logo"></div>
+                <div class="user-detail">
+                    <div class="user-name">Premanshu Pandey</div>
+                    <div class="user-role">Student</div>
+                    <!-- <a href="/auth/logout">
+                        <div class="logout">Logout</div>
+                    </a> -->
                 </div>
             </div>
+
+            <div class="tab-nav">
+                <div class="tab-select tab-utility-btn">Select</div>
+                <div class="tab-tool tab-utility-btn">Tools</div>
+                <div class="tab-bookmark tab-utility-btn">Bookmarks</div>
+            </div>
+            <div class="course-info">
+                <div class="select">Select Branch</div>
+                <div class="branch-list list-item">
+
+                    <div class="branch-name small-text">Applied Physics & Materials Engineering</div>
+
+                    <div class="branch-name">Architecture & Planning</div>
+
+                    <div class="branch-name">Chemical Science & Technology</div>
+
+                    <div class="branch-name">Civil Engineering</div>
+
+                    <div class="branch-name">Computer Science & Engineering</div>
+
+                    <div class="branch-name">Electrical Engineering</div>
+
+                    <div class="branch-name small-text">Electronic & Communication Engineering</div>
+
+                    <div class="branch-name">Humanities & Social Science</div>
+
+                    <div class="branch-name small-text">Mathematics & Computation Technology</div>
+
+                    <div class="branch-name">Mechanical Engineering</div>
+
+                    <div class="branch-name small-text">Mechatronics & Automation Engineering</div>
+
+
+                </div>
+                <div class="semester-list list-item">
+                    <ul>
+                        <li class="semester-number">Semester-1</li>
+                        <li class="semester-number">Semester-2</li>
+                        <li class="semester-number">Semester-3</li>
+                        <li class="semester-number">Semester-4</li>
+                        <li class="semester-number">Semester-5</li>
+                        <li class="semester-number">Semester-6</li>
+                        <li class="semester-number">Semester-7</li>
+                        <li class="semester-number">Semester-8</li>
+                    </ul>
+                </div>
+                <!-- <div class="subject-list"></div> -->
+            </div>
         </div>
+
+        <div class="content-area">
+            <!-- <div class="study"></div> -->
+
+
+            <div class="function-card">
+                <div class="func-name">Tools</div>
+                <div class="card func-1">
+                    <div class="card2"></div>
+                </div>
+                <div class="card func-2">
+                    <div class="card2"></div>
+                </div>
+                <div class="card func-3">
+                    <div class="card2"></div>
+                </div>
+                <div class="card func-4">
+                    <div class="card2"></div>
+                </div>
+                <div class="card func-5">
+                    <div class="card2"></div>
+                </div>
+                <div class="card func-6">
+                    <div class="card2"></div>
+                </div>
+            </div>
+
+            <div class="bookmark">
+                <div class="bookmark-tab">Bookmarks</div>
+                <div class="bookmark-lists">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 </body>
+<script src="/javascripts/script.js"></script>
 
 </html>
