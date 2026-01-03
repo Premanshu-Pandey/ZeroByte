@@ -4,7 +4,8 @@ const courseSchema = new mongoose.Schema({
     branch:String,
     semester:Number,
     subject:String,
-    notes:[{
+    note:[{
+        type:mongoose.Schema.Types.ObjectId,
         ref:"notes"
     }]
 })

@@ -8,6 +8,8 @@ const { uploadPDF } = require("./controllers/uploadController.js");
 
 require('dotenv').config()
 
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 const session = require('express-session')
 const passport = require('passport')
@@ -30,9 +32,8 @@ app.use(passport.session())
 
 app.use('/auth', require('./routes/auth'))
 
+app.use('/home/upload', require('./routes/upload'))
 
-app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 function isLoggedIn(req, res, next) {
@@ -40,10 +41,11 @@ function isLoggedIn(req, res, next) {
     res.redirect('/')
 }
 
+app.use('/home',isLoggedIn)
 // Sample route
 app.get('/home', isLoggedIn, (req, res) => {
     console.log(req.user)
-    res.render('home');
+    res.render('home',{user:req.user});
 });
 
 app.get('/', (req, res) => {
@@ -54,26 +56,27 @@ app.get('/edit', (req, res) => {
     res.render('card')
 })
 
-app.get('/home/upload',(req,res)=>{
-    res.render('upload')
-})
+// app.get('/home/upload',(req,res)=>{
+//     res.render('upload')
+// })
 
 
-app.post('/home/upload/send',upload.single('file'),uploadPDF,async (req, res) => {
+// app.post('/home/upload/send',upload.single('notes'),async (req, res) => {
+//     res.send(req.body)
+//     // File info
+//     // const file = req.file;
+//     // const { subject, semester, branch } = req.body;
 
-    // File info
-    const file = req.file;
-    const { subject, semester, branch } = req.body;
+//     // if (!file) {
+//     //   return res.status(400).json({ error: 'No file uploaded' });
+//     // }
+//     // console.log(file.originalname)
 
-    if (!file) {
-      return res.status(400).json({ error: 'No file uploaded' });
-    }
+//     // // file.path → temp file location
+//     // // Upload file to Firebase / S3 next
 
-    // file.path → temp file location
-    // Upload file to Firebase / S3 next
-
-    res.json({ message: 'File received successfully' });
-})
+//     // res.json({ message: 'File received successfully' });
+// })
 
 // Start the server
 app.listen(port, () => {

@@ -54,7 +54,7 @@
             <div class="user-info">
                 <div class="logo"><img src="/images/logo.png" alt="logo"></div>
                 <div class="user-detail">
-                    <div class="user-name">Premanshu Pandey</div>
+                    <div class="user-name"><%= user.name %></div>
                     <div class="user-role">Student</div>
                     <!-- <a href="/auth/logout">
                         <div class="logout">Logout</div>
@@ -118,22 +118,48 @@
             <div class="function-card">
                 <div class="func-name">Tools</div>
                 <div class="card func-1">
-                    <div class="card2"></div>
+                    <div class="card2">
+                        <h1>Flashcard</h1>
+                        <p>create flashcard of your weak topic for quick learning</p>
+                    </div>
                 </div>
                 <div class="card func-2">
-                    <div class="card2"></div>
+                    <div class="card2">
+                        <h1>Quizzes</h1>
+                        <p>Practice topics with questions covering whole topic</p>
+                    </div>
                 </div>
                 <div class="card func-3">
-                    <div class="card2"></div>
+                    <div class="card2">
+                        <h1>Summary</h1>
+                        <p>Learn with detail revision summary of your notes</p>
+                    </div>
                 </div>
                 <div class="card func-4">
-                    <div class="card2"></div>
+                    <div class="card2">
+                        <h1>Last-minute revision</h1>
+                        <p>get quick short summary for last minute husttle</p>
+                    </div>
                 </div>
                 <div class="card func-5">
-                    <div class="card2"></div>
+                    <div class="card2">
+                        <h1>Imp questions</h1>
+                        <p>Get imporatant question from perpective of exam</p>
+                    </div>
+
                 </div>
                 <div class="card func-6">
-                    <div class="card2"></div>
+                    <div class="card2">
+                        <% if (user.role=='Student'){ %>
+                            <h1>Your desk</h1>
+                            <p>create your own set of notes as per your requirement</p>
+                        <% } else{ %>
+                            <div class="add-notes">
+                                <h1>Add notes</h1>
+                                <p>Add notes for students</p>
+                            </div>
+                        <%}%>
+                    </div>
                 </div>
             </div>
 
@@ -148,7 +174,48 @@
                 </div>
             </div>
 
+            <div class="upload-notes">
+           
+                <form action="/home/upload/send" method="post" id="form" enctype="multipart/form-data">
+                <label for="branch" id="branch-label">select branch</label><br>
+                <select name="branch" id="branch" required>
+                    <option value="Select branch" selected disabled>select a branch</option>
+                    <option value="apme">Applied Physics & Materials Engineering</option>
+                    <option value="ap">Architecture & Planning</option>
+                    <option value="cst">Chemical Science & Technology</option>
+                    <option value="ce">Civil Engineering</option>
+                    <option value="cse">Computer Science & Engineering</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="ece">Electronic & Communication Engineering</option>
+                    <option value="hss">Humanities & Social Science</option>
+                    <option value="mnc">Mathematics & Computation Technology</option>
+                    <option value="me">Mechanical Engineering</option>
+                    <option value="mae">Mechatronics & Automation Engineering</option>
+                </select>
+
+                <label for="semester" id="semester-label" >Select Semester</label>
+                <input type="number" id="semester" name="semester" placeholder="1" min="1" max="8" required>
+
+                <label for="notes" id="notes-label">Enter Subject</label>
+                <input type="file" name="notes" id="notes" required>
+                <input type="text" name="subject" id="subject" placeholder="Enter name of subject" required>
+
+                <button type="submit" id="upload">Upload</button>
+                <button type="reset" id="cancel">Cancel</button>
+
+            </form>
+            
         </div>
+
+
+        </div>
+        
+
+
+        
+
+
+
 
     </main>
 </body>

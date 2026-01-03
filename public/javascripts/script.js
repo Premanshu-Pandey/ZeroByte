@@ -29,6 +29,10 @@ let bookamrkinvi = 1
 const functionCard = document.querySelector('.function-card')
 let funcinvi = 1
 
+const card = document.querySelector('.card2')
+const addNotes = document.querySelector('.add-notes')
+const cancelBtn = document.querySelector('#cancel')
+
 
 
 
@@ -60,6 +64,18 @@ const branchDetail = {
     'Mechatronics & Automation Engineering':'mae'
 }
 
+
+addNotes.addEventListener('click',(e)=>{
+    console.log('clicked notes')
+    document.querySelector('.upload-notes').style.display = "flex"
+    // window.location.href = 'http://localhost:3000/home/upload'
+    // fetch('http://localhost:3000/home/upload')
+})
+
+cancelBtn.addEventListener('click',(e)=>{
+    document.querySelector('.upload-notes').style.display = "none"
+
+})
 
 branchList.addEventListener('click', (e)=>{
     branch=branchDetail[e.target.innerText]

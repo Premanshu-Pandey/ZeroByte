@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     email: String,
     role: {
         type: String,
-        default: 'user'
+        default: 'Student'
     }
 })
 
